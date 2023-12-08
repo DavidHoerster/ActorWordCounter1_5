@@ -4,12 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ActorMapReduceWordCount.Messages
+namespace ActorMapReduceWordCount.Messages;
+public class StartCount(String file)
 {
-    public class StartCount
-    {
-        public readonly String FileName;
-
-        public StartCount(String file) { FileName = file; }
-    }
+    public readonly String FileName = file;
 }

@@ -14,11 +14,10 @@ if (file.Length == 0)
 
 
 
-using(var system = ActorSystem.Create("helloAkka")){
-    var counter = system.ActorOf(CountSupervisor.Create(), "supervisor");
-    counter.Tell(new StartCount(file));
-    Console.ReadLine();
-}
+var system = ActorSystem.Create("helloAkka");
+var counter = system.ActorOf(CountSupervisor.Create(), "supervisor");
+counter.Tell(new StartCount(file));
+Console.ReadLine();
 
 
 
